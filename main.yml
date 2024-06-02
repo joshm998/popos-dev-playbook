@@ -90,17 +90,17 @@
       tags:
         - bitwarden
 
+    - name: Install Oh My ZSH
+      import_tasks: tasks/ohmyzsh.yml
+      when: install_ohmyzsh
+      tags:
+        - ohmyzsh
+
     - name: Set .zshrc
       import_tasks: tasks/zshrc.yml
       when: configure_zshrc
       tags:
         - zshrc
-
-    - name: Set .zshrc
-      import_tasks: tasks/ohmyzsh.yml
-      when: install_ohmyzsh
-      tags:
-        - ohmyzsh
 
     - name: Install camset
       import_tasks: tasks/camset.yml
