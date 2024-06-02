@@ -17,12 +17,6 @@
         - always
 
   roles:
-    - role: geerlingguy.composer
-      when: install_composer
-      become: true
-      tags:
-        - php
-        - composer
     - role: darkwizard242.googlechrome
       when: install_chrome
       become: true
@@ -45,6 +39,12 @@
         - vscode
 
   tasks:
+    - name: Install ZSH
+      import_tasks: tasks/zsh.yml
+      when: install_zsh
+      tags:
+        - zsh
+
     - name: Install NVM
       import_tasks: tasks/nvm.yml
       when: install_nvm
