@@ -42,6 +42,7 @@
     - name: Install ZSH
       import_tasks: tasks/zsh.yml
       when: install_zsh
+      become: true
       tags:
         - zsh
 
