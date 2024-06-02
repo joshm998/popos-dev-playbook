@@ -11,7 +11,7 @@ docker_users: ["{{ ansible_env.USER }}"]
 
 # ZSH
 install_zsh: true
-
+install_ohmyzsh: true
 configure_zshrc: true
 
 # AWS cli

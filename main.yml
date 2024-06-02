@@ -96,6 +96,12 @@
       tags:
         - zshrc
 
+    - name: Set .zshrc
+      import_tasks: tasks/ohmyzsh.yml
+      when: install_ohmyzsh
+      tags:
+        - ohmyzsh
+
     - name: Install camset
       import_tasks: tasks/camset.yml
       when: install_camset
