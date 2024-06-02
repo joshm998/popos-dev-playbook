@@ -1,0 +1,5 @@
+---
+- name: Zoom Flatpak Install
+  flatpak:
+    name: us.zoom.Zoom
+    method: user

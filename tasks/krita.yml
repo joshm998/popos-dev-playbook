@@ -1,0 +1,5 @@
+---
+- name: Krita Install
+  flatpak:
+    name: org.kde.krita
+    method: user

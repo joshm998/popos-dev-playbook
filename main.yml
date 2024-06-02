@@ -65,6 +65,24 @@
       when: install_spotify
       tags:
         - spotify
+    
+    - name: Install GitHub Desktop
+      import_tasks: tasks/github-desktop.yml
+      when: install_github_desktop
+      tags:
+        - github
+
+    - name: Install Krita
+      import_tasks: tasks/krita.yml
+      when: install_krita
+      tags:
+        - krita
+
+    - name: Install Zoom
+      import_tasks: tasks/zoom.yml
+      when: install_zoom
+      tags:
+        - zoom
 
     - name: Install Bitwarden
       import_tasks: tasks/bitwarden.yml

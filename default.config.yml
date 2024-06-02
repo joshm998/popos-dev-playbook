@@ -20,11 +20,12 @@ install_aws: false
 # Node
 install_nvm: true
 
-# IDEs
+# Dev Tools
 install_jetbrains_toolbox: true
 toolbox_version: "2.3.1.31116"
 
 install_vscode: true
+install_github_desktop: true
 
 # Task execution tool
 install_invoke: true
@@ -34,6 +35,12 @@ install_spotify: false
 
 # Password manager
 install_bitwarden: true
+
+# Krita (Image Editor)
+install_krita: true
+
+# Zoom
+install_zoom: true
 
 # Tool for adjusting webcam settings
 install_camset: true
