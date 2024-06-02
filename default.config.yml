@@ -1,0 +1,43 @@
+---
+downloads: ~/.ansible-downloads/
+
+# Browser
+install_chrome: true
+
+# Docker
+install_docker: true
+docker_compose_version: "2.27.1"
+docker_users: ["{{ ansible_env.USER }}"]
+
+# ZSH
+install_zsh: true
+
+configure_zshrc: true
+
+# AWS cli
+install_aws: false
+
+# Node
+install_nvm: true
+
+# IDEs
+install_jetbrains_toolbox: true
+toolbox_version: "2.3.1.31116"
+
+install_vscode: true
+
+# Task execution tool
+install_invoke: true
+
+# Music
+install_spotify: false
+
+# Password manager
+install_bitwarden: true
+
+# Tool for adjusting webcam settings
+install_camset: true
+
+# Sets the hardware clock to use the local timezone rather than UTC.
+# This is useful when dual booting with windows.
+hw_clock_local_timezone: true

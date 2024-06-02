@@ -1,0 +1,9 @@
+---
+roles:
+  - name: darkwizard242.googlechrome
+  - name: geerlingguy.docker
+  - name: ngetchell.vscode
+  - name: webarchitect609.jet_brains_toolbox
+
+collections:
+  - name: community.general

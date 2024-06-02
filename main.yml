@@ -1,0 +1,98 @@
+---
+- hosts: all
+
+  vars_files:
+    - default.config.yml
+
+  pre_tasks:
+    - name: Include playbook configuration.
+      include_vars: "{{ item }}"
+      with_fileglob:
+        - "{{ playbook_dir }}/config.yml"
+      tags:
+        - always
+    - name: Set ansible_distribution to Ubuntu
+      set_fact: ansible_distribution="Ubuntu"
+      tags:
+        - always
+
+  roles:
+    - role: geerlingguy.composer
+      when: install_composer
+      become: true
+      tags:
+        - php
+        - composer
+    - role: darkwizard242.googlechrome
+      when: install_chrome
+      become: true
+      tags:
+        - chrome
+    - role: geerlingguy.docker
+      when: install_docker
+      become: true
+      tags:
+        - docker
+    - role: webarchitect609.jet_brains_toolbox
+      when: install_jetbrains_toolbox
+      become: true
+      tags:
+        - jetbrains_toolbox
+    - role: ngetchell.vscode
+      when: install_vscode
+      become: true
+      tags:
+        - vscode
+
+  tasks:
+    - name: Install NVM
+      import_tasks: tasks/nvm.yml
+      when: install_nvm
+      tags:
+        - node
+        - nvm
+
+    - name: Install AWS Cli
+      import_tasks: tasks/awscli.yml
+      when: install_aws
+      become: true
+      tags:
+        - awscli
+
+    - name: Install Spotify
+      import_tasks: tasks/spotify.yml
+      when: install_spotify
+      tags:
+        - spotify
+
+    - name: Install Bitwarden
+      import_tasks: tasks/bitwarden.yml
+      when: install_bitwarden
+      tags:
+        - bitwarden
+
+    - name: Set .zshrc
+      import_tasks: tasks/zshrc.yml
+      when: configure_zshrc
+      tags:
+        - zshrc
+
+    - name: Install camset
+      import_tasks: tasks/camset.yml
+      when: install_camset
+      become: true
+      tags:
+        - camset
+
+    - name: Install invoke
+      import_tasks: tasks/invoke.yml
+      when: install_invoke
+      become: true
+      tags:
+        - invoke
+
+    - name: Set hardware clock to local timezone
+      import_tasks: tasks/hwclock.yml
+      when: hw_clock_local_timezone
+      tags:
+        - hwclock
