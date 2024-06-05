@@ -1,0 +1,5 @@
+---
+- name: Flameshot Install
+  flatpak:
+    name: org.flameshot.Flameshot
+    method: user

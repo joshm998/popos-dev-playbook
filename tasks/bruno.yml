@@ -1,0 +1,5 @@
+---
+- name: Bruno Install
+  flatpak:
+    name: com.usebruno.Bruno
+    method: user

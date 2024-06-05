@@ -26,6 +26,7 @@ toolbox_version: "2.3.1.31116"
 
 install_vscode: true
 install_github_desktop: true
+install_bruno: true
 
 # Task execution tool
 install_invoke: true
@@ -41,6 +42,8 @@ install_krita: true
 
 # Zoom
 install_zoom: true
+
+install_flameshot: true
 
 # Tool for adjusting webcam settings
 install_camset: true

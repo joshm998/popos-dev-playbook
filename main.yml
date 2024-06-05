@@ -89,6 +89,18 @@
       when: install_bitwarden
       tags:
         - bitwarden
+    
+    - name: Install Bruno
+      import_tasks: tasks/bruno.yml
+      when: install_bruno
+      tags:
+        - bruno
+    
+    - name: Install Flameshot
+      import_tasks: tasks/flameshot.yml
+      when: install_flameshot
+      tags:
+        - flameshot
 
     - name: Install Oh My ZSH
       import_tasks: tasks/ohmyzsh.yml
